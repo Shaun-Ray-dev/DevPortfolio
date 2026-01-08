@@ -1,0 +1,25 @@
+<h1>Your Loot Locker Stash</h1>
+
+{% if items %}
+    <ul>
+    {% for item in items %}
+        <li>
+            <strong>{{ item.item }}</strong> - {{ item.category }}
+            {% if item.subcategory %} - {{ item.subcategory }}{% endif %}
+            {% if item.edition %} - {{ item.edition }}{% endif %}
+            {% if item.brand %} - {{ item.brand }}{% endif %}
+            {% if item.year %} - {{ item.year }}{% endif %}
+            {% if item.condition %} - {{ item.condition }}{% endif %}
+            {% if item.market_value %}
+                - ${{ item.market_value|floatformat:2 }}
+            {% else %}
+                - <em>Price not found</em>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No items in your stash yet!</p>
+{% endif %}
+
+
