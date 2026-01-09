@@ -1,16 +1,12 @@
-import platform       
-import psutil 
+import psutil
+import platform
 
-def collect_system_info(): 
-    info = {            
-        "hostname": platform.node(),       
-        "os": platform.system(),          
-        "cpu_percent": psutil.cpu_percent(interval=1), 
-        "ram_percent": psutil.virtual_memory().percent, 
-        "disk_percent": psutil.disk_usage('/').percent 
+def collect_system_info():
+    return {
+        "hostname": platform.node(),
+        "os": platform.system(),
+        "cpu_percent": psutil.cpu_percent(),
+        "ram_percent": psutil.virtual_memory().percent,
+        "disk_percent": psutil.disk_usage('C:\\').percent 
     }
-    return info                     
-
-if __name__ == "__main__":            
-    data = collect_system_info()      
-    print(data)                    
+    

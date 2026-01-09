@@ -1,25 +1,18 @@
-import paramiko
-
 def get_remote_metrics(host, username, password):
-    ssh = paramiko.SSHClient()
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(host, username=username, password=password)
-
-    stdin, stdout, stderr = ssh.exec_command("uptime")
-    uptime = stdout.read().decode().strip()
-
-    stdin, stdout, stderr = ssh.exec_command(
-        "free -m | awk 'NR==2{printf \"%s\", $3/$2*100 }'"
-    )
-    ram_percent = stdout.read().decode().strip()
-
-    ssh.close()
-
-    return {"host": host, "uptime": uptime, "ram_percent": ram_percent}
+    """
+    Returns fake remote metrics for demonstration.
+    """
+    return {
+        "host": host,
+        "uptime": "5 days, 4:32",
+        "cpu_percent": 23.5,
+        "ram_percent": 48.2,
+        "disk_percent": 62.1
+    }
 
 if __name__ == "__main__":
-    host = "192.168.1.100"
-    username = "user"
-    password = "pass"
-    data = get_remote_metrics(host, username, password)
-    print(data)
+    demo_hosts = ["192.168.1.100", "192.168.1.101"]
+
+    for host in demo_hosts:
+        data = get_remote_metrics(host, "user", "pass")
+        print(data)

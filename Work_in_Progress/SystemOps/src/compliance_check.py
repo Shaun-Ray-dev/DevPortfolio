@@ -1,3 +1,5 @@
+import os
+
 def chk_com(config_file, baseline_file):
     with open(config_file) as cf, open(baseline_file) as bf:
         config_lines = cf.readlines()
@@ -7,7 +9,12 @@ def chk_com(config_file, baseline_file):
     return diff
 
 if __name__ == "__main__":
-    result = chk_com("example_config.txt", "baseline.txt")
+    SRC_DIR = os.path.dirname(__file__)
+    config_file = os.path.join(SRC_DIR, "example_config.txt")
+    baseline_file = os.path.join(SRC_DIR, "baseline_config.txt")
+    
+    result = chk_com(config_file, baseline_file)
+    
     if result:
         print("Non-compliant lines:", result)
     else:
