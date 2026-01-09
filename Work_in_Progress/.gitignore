@@ -1,0 +1,8 @@
+*.log
+
+report/
+logs/
+output/
+
+*.pickle
+*.env
