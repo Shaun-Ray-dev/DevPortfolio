@@ -1,5 +1,0 @@
-hostname: Shauns-Workstation
-os: Windows
-cpu_limit: 80
-ram_limit: 70
-disk_limit: 90

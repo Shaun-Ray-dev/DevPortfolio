@@ -1,4 +1,0 @@
-INFO Server started
-ERROR Failed to connect to database
-INFO User logged in
-ERROR Disk space low
