@@ -1,4 +1,6 @@
-$BackupFolder = ".\backup_locker\backups"
+$ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$BackupFolder = Join-Path $ScriptRoot "..\backup_locker\backups"
+
 
 If (!(Test-Path $BackupFolder)) { 
     New-Item -ItemType Directory -Path $BackupFolder | Out-Null
