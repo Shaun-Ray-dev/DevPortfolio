@@ -1,7 +1,4 @@
 def get_remote_metrics(host, username, password):
-    """
-    Returns fake remote metrics for demonstration.
-    """
     return {
         "host": host,
         "uptime": "5 days, 4:32",

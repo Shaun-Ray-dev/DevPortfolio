@@ -4,7 +4,6 @@ def chk_com(config_file, baseline_file):
     with open(config_file) as cf, open(baseline_file) as bf:
         config_lines = cf.readlines()
         baseline_lines = bf.readlines()
-
     diff = [line for line in config_lines if line not in baseline_lines]
     return diff
 

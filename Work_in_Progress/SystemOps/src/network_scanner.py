@@ -11,13 +11,11 @@ def ping_ip(ip):
 
 def scan_network(subnet):
     active_hosts = []                         
-
     for ip in ipaddress.IPv4Network(subnet):
         print(f"Pinging {ip}...")                
         if ping_ip(ip):                           
             print(f"Host up: {ip}")
             active_hosts.append(str(ip))        
-
     return active_hosts                            
 
 if __name__ == "__main__":
