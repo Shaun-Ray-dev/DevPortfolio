@@ -66,9 +66,9 @@ def main():
     with open(report_file, "w") as report:
         report.write("\n".join(summary))
 
-    print(f"\n✔ Automation complete")
-    print(f"✔ Log file: {log_file}")
-    print(f"✔ Report file: {report_file}")
+    print(f"\nAutomation complete")
+    print(f"Log file: {log_file}")
+    print(f"Report file: {report_file}")
 
 if __name__ == "__main__":
     main()
