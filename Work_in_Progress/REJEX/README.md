@@ -1,0 +1,1 @@
+<!-- **Description:**  REJEX is a PowerShell automation tool that scans your Outlook inbox for rejection emails from employers and moves them to a folder named `REJEX`. -->
