@@ -1,5 +1,5 @@
 # ======= USER CONFIG =======
-$TargetEmail = "shaun.devhub@outlook.com"
+$TargetEmail = "test@outlook.com"
 $KeywordsFile = Join-Path $PSScriptRoot "keywords.json"
 $RejFolderName = "REJEX"
 $DryRun = $true
